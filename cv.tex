@@ -17,196 +17,173 @@
     label={}, 
     leftmargin=16pt, 
     rightmargin=12pt}
-    %topsep=0pt,
-    %partopsep=0pt,
-    %parsep=0pt,
-    %itemsep=0pt}
 
 % Turn off page numbering
 \pagenumbering{gobble}
 
 % Section formatting
 \usepackage{titlesec}
-\titleformat{\section}{
-    \vspace{0pt} \scshape \raggedright \large
-}{}{0em}{}[\titlerule \vspace{-2pt}]
+\titleformat{\section}{\scshape \large }{}{0em}{}[\titlerule \vspace{-4pt}]
 
 % ----- Newcommands ------------------------------------------------------------
-% List for the main sections
-%\newcommand{\cvSectionBegin}{\begin{itemize}} 
-%\newcommand{\cvSectionEnd}{\end{itemize}}
-
-\newcommand{\cvEntryBf}[2]{
-    \vspace{-2pt} \item \textbf{#1} \hfill #2 \vspace{-7pt}}
-\newcommand{\cvEntryIt}[2]{
-    \vspace{-2pt} \item \textit{\small #1} \hfill #2 \vspace{-7pt}}
-
 % List for explanation of different entries
 \newcommand{\cvItemizeBegin}{\begin{itemize}}
-\newcommand{\cvItemizeEnd}{\end{itemize}\vspace{-5pt}}
-\newcommand{\cvItem}[1]{
-    \item[--] \small{{#1 \vspace{-2pt}}}}
+\newcommand{\cvItemizeEnd}{\end{itemize} \vspace{-7pt}}
+
+\newcommand{\entryBf}[2]{\item \textbf{#1} \hfill #2 \vspace{-9pt}}
+\newcommand{\entryIt}[2]{\item \textit{\small #1} \hfill #2 \vspace{-7pt}}
+\newcommand{\cvItem}[1]{\item[--] \small #1 \vspace{-2pt}}
 
 % Command for Open Source Projects on Github
-\newcommand{\cvOpenSource}[2]{\vspace{-2pt}\item
-    \textbf{#1} \href{#2}{\faGithub}
-\vspace{-7pt}}
+\newcommand{\cvOS}[2]{\item \textbf{#1} \href{#2}{\faGithub} \vspace{-7pt}}
 
-% Publications IEEE style (see e.g. https://www.bath.ac.uk/publications/library-guides-to-citing-referencing/attachments/ieee-style-guide.pdf)
+% Publications IEEE style
+% https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf
 
 % Initials and Surname, “Title,” in Conference, Location, Year, pp. X.
 \newcommand{\ieeeConference}[6]{
-    \small \item #1, "#2," in \textit{#3,} #4, #5, #6. \vspace{-5pt}}
+    \item \small #1, "#2," in \textit{#3,} #4, #5, #6. 
+    \vspace{-5pt}
+}
 
 % Initials and Surname, “Title,” Journal, vol., issue, page numbers, Month Year.
 \newcommand{\ieeeJournal}[7]{
-    \small \item #1, "#2," \textit{#3,} #4, #5, #6, #7. \vspace{-6pt}}
-
+    \item \small #1, "#2," \textit{#3,} #4, #5, #6, #7. 
+    \vspace{-5pt}
+}
 
 % Initials and Surname, “Title,” Company., City., State, Report number, year.
 \newcommand{\ieeeReport}[6]{
-    \small \item #1, "#2," #3, #4, #5, #6. \vspace{-5pt}}
+    \item \small #1, "#2," #3, #4, #5, #6.
+    \vspace{-5pt}
+}
 
 
 % ----- Begin Document ---------------------------------------------------------
 \begin{document}
 
 \begin{center}
-    \textbf{\Huge Etienne Mueller} \\ \vspace{12pt}
+    \textbf{\Huge Etienne Mueller} \\ 
+    \vspace{12pt}
     \small
-    \faHome \hspace{.5pt} \href{https://www.etiennemueller.com}{etiennemueller.com} |
-    \faEnvelope \hspace{.5pt} \href{mailto:etienne.mueller@pm.me}{etienne.mueller@pm.me} |
-    \faGithub \hspace{.5pt} \href{https://github.com/EtienneMueller/}{github.com/EtienneMueller} |
-    \faPhone \hspace{.5pt} \href{tel:+4915161280989}{+49 151 61280989}
+    \faHome \hspace{.5pt} 
+    \href{https://www.etiennemueller.com}{etiennemueller.com} |
+    \faEnvelope \hspace{.5pt} 
+    \href{mailto:etienne.mueller@pm.me}{etienne.mueller@pm.me} |
+    \faGithub \hspace{.5pt} 
+    \href{https://github.com/EtienneMueller/}{github.com/EtienneMueller} |
+    \faPhone \hspace{.5pt} 
+    \href{tel:+4915161280989}{+49 151 61280989}
 \end{center}
 
 % ----- Education --------------------------------------------------------------
 \section{Education}
 %\cvSectionBegin
 \begin{itemize}
-    \cvEntryBf{Ph.D. in Computer Science}{exp. 09/2022}
-    \cvEntryIt{Technical University of Munich, Germany}{}
-    %\cvItemizeBegin
-    \begin{itemize}
+    \entryBf{Ph.D. in Computer Science}{exp. 09/2022}
+    \entryIt{Technical University of Munich, Germany}{}
+    \cvItemizeBegin
         \cvItem{Thesis on biologically-inspired neural networks for efficient computation in cooperation with \textit{Infineon}}
         \cvItem{Development of the best performing deep spiking neural network for object detection to date}
         \cvItem{Research of biologically-inspired approaches for natural language processing and pattern recognition}
-    %\cvItemizeEnd
-    \end{itemize}
-    \vspace{-5pt}
-
-    \cvEntryBf{M.Sc. in Product Development, Materials and Production}{2017}
-    \cvEntryIt{Technical University of Hamburg, Germany}{}
-    %\cvItemizeBegin
-    \begin{itemize}
+    \cvItemizeEnd
+    \entryBf{M.Sc. in Product Development, Materials and Production}{2017}
+    \entryIt{Technical University of Hamburg, Germany}{}
+    \cvItemizeBegin
         \cvItem{Thesis on the development of autonomous racing vehicles}
         \cvItem{Awarded the Incentive Prize of the Technical University of Hamburg endowed with 1,500\euro}
-    %\cvItemizeEnd
-    \end{itemize}
-    \vspace{-5pt}
-
-    \cvEntryBf{Semester Abroad}{2015/16}
-    \cvEntryIt{Institut Catholique d'Arts et M\'etiers Nantes, France}{}
-    \vspace{4pt}
-
-    \cvEntryBf{B.Sc. in Mechanical Engineering}{2014}
-    \cvEntryIt{Technical University of Hamburg, Germany}{}
-    %\cvItemizeBegin
-    \begin{itemize}
+    \cvItemizeEnd
+    \entryBf{Semester Abroad}{2015/16}
+    \entryIt{Institut Catholique d'Arts et M\'etiers Nantes, France}{}
+    \vspace{2pt}
+    \entryBf{B.Sc. in Mechanical Engineering}{2014}
+    \entryIt{Technical University of Hamburg, Germany}{}
+    \cvItemizeBegin
         \cvItem{Thesis on increasing the accuracy of industrial robots.}
-    %\cvItemizeEnd
-    \end{itemize}
-    \vspace{-5pt}
-
-    %\ieeeNew
-    %    {D. Auge, P. Wenner, \textbf{E. Mueller}}
-    %    {Hand Gesture Recognition using Hierarchical Temporal Memory on Radar Sequence Data}
-    %    {Bernstein Computational Neuroscience Conference}{}{2020}{}
-
-%\cvSectionEnd
+    \cvItemizeEnd
 \end{itemize}
 
 % ---------- EXPERIENCE --------------------------------------------------------
 \section{Professional Experience}
 \begin{itemize}
-    \cvEntryBf{Technical Advisor}{2021 \textbf{--} Present}
-    \cvEntryIt{Technical University of Munich}{}
+    \entryBf{Technical Advisor}{2021 \textbf{--} Present}
+    \entryIt{Technical University of Munich}{}
     \cvItemizeBegin
-        \cvItem{Technical coordination and leading of a pilot case for an EU-funded (Horizon 2020) project (SHOP4CF) test test test test test}
+        \cvItem{Technical coordination and leading of a pilot case for an EU-funded (Horizon 2020) \\ project (SHOP4CF)}
     \cvItemizeEnd
-
-    \cvEntryBf{AI Researcher}{2018 \textbf{--} 2021}
-    \cvEntryIt{Infineon Technologies AG}{}
+    \entryBf{AI Researcher}{2018 \textbf{--} 2021}
+    \entryIt{Infineon Technologies AG}{}
     \cvItemizeBegin
         \cvItem{Research cooperation with the Technical University of Munich}
         \cvItem{Development of an open source toolbox for conventional to spiking neural network conversion}
     \cvItemizeEnd
-
-    \cvEntryBf{Component Manager}{2018 \textbf{--} 2018}
-    \cvEntryIt{BMW via aam it GmbH}{}
+    \entryBf{Component Manager}{2018 \textbf{--} 2018}
+    \entryIt{BMW via aam it GmbH}{}
     \cvItemizeBegin
         \cvItem{Technical supervision of cooling water pumps for electric and combustion vehicles for BMW}
     \cvItemizeEnd
-
-    \cvEntryBf{Formula Student Member @ e-gnition Hamburg e.V.}{2012 {--}2017}
-    \cvEntryIt{Developer Driverless Actuator Technology (2016 -- 2017)}{}
+    \entryBf{Formula Student Member @ e-gnition Hamburg e.V.}{2012 {--} 2017}
+    \entryIt{Developer Driverless Actuator Technology (2016 -- 2017)}{}
     \cvItemizeBegin
         \cvItem{1st Place Formula Student Driverless: Autonomous Design}
         \cvItem{3rd Place Formula Student Driverless: Overall}
     \cvItemizeEnd
-    \cvEntryIt{Division Manager Business Plan (2014 -- 2016)}{}
+    \vspace{-4pt}
+    \entryIt{Division Manager Business Plan (2014 -- 2016)}{}
     \cvItemizeBegin
-        \cvItem{Special Award for educational video "How to Business Plan" at FS Hungary}
+        \cvItem{Special Award for educational video "How to Business Plan" at Formula Student Hungary}
     \cvItemizeEnd
-    \cvEntryIt{President \& Team Captain (2013 -- 2014)}{}
+    \vspace{-4pt}
+    \entryIt{President \& Team Captain (2013 -- 2014)}{}
     \cvItemizeBegin
         \cvItem{Special Award for Ecological Design by Magna Steyr}
     \cvItemizeEnd
-    \cvEntryIt{Division Manager Aerodynamics (2012 -- 2013)}{}
-    \vspace{5pt}
-
-    \cvEntryBf{Co-founder \& CEO}{2015 \textbf{--} 2016}
-    \cvEntryIt{Slive}{}
+    \vspace{-4pt}
+    \entryIt{Division Manager Aerodynamics (2012 -- 2013)}{}
+    \vspace{2pt}
+    \entryBf{Co-founder \& CEO}{2015 \textbf{--} 2016}
+    \entryIt{Slive}{}
     \cvItemizeBegin
         \cvItem{Development of smart wearable devices and location-based sharing algorithms}
         \cvItem{Awarded Nissen Foundation Start-Up Grant endowed with 3,000\euro}
     \cvItemizeEnd
-
-    \cvEntryBf{Research Assistant}{2013 \textbf{--} 2013}
-    \cvEntryIt{Institute of Aircraft Production, Technical University of Hamburg}{}
+    \entryBf{Research Assistant}{2013 \textbf{--} 2013}
+    \entryIt{Institute of Aircraft Production, Technical University of Hamburg}{}
     \cvItemizeBegin
         \cvItem{Manufacturing of components via a six-axis industrial robot and CAM software.}
     \cvItemizeEnd
-
-    \cvEntryBf{Assistant Consultant}{2010 \textbf{--} 2012}
-    \cvEntryIt{Lischke Consulting}{}
+    \entryBf{Assistant Consultant}{2010 \textbf{--} 2012}
+    \entryIt{Lischke Consulting}{}
 \end{itemize}
 
 % ---------- TEACHING EXPERIENCE -----------------------------------------------
 \section{Teaching Experience}
 \begin{itemize}
-    \cvEntryBf{Lecturer in Cognitive Systems}{2019 \textbf{--} 2021}
-        \cvItemizeBegin
-            \cvItem{Teaching topics of cognition, senses and perceptions, biological inspired computational models and neurorobotics}
-            \cvItem{Creating and grading of exams for over 400 students}
-        \cvItemizeEnd
-
-    \cvEntryBf{Thesis Supervision in Deep Learning and Spiking Neural Networks}
+    \entryBf{Lecturer in Cognitive Systems}{2019 \textbf{--} 2021}
+    \vspace{2pt}
+    \cvItemizeBegin
+        \cvItem{Covering topics such as cognition, senses and perceptions, biological inspired computational \\ models and neurorobotics}
+        \cvItem{Creating and grading of exams for over 400 students}
+    \cvItemizeEnd
+    \entryBf{Thesis Supervision in Deep Learning and Spiking Neural Networks}
     {2018 \textbf{--} 2021}
-        \cvItemizeBegin
-            \cvItem{Master Thesis (2021): Performance of Time to First Spike Encoded Spiking Neural Networks}
-            \cvItem{Research Internship (2021): Conversion of TransformerNets}
-            \cvItem{Master Thesis (2021): Conversion of LSTM-based Recurrent Neural Networks}
-            \cvItem{Master Thesis (2021): Conversion of GRU-based Recurrent Neural Networks}
-            \cvItem{Research Internship (2020): Carla as Open Source Platform for Analyzing and Evaluating Autonomous Driving}
-            \cvItem{Master Thesis (2020): Converting Analogue to Spiking Convolutional Neural Networks for Object Detection}
-            \cvItem{Master Thesis (2019): Semantic Segmentation of Integrated Circuit Layout Images}
-        \cvItemizeEnd
+    \vspace{2pt}
+    \cvItemizeBegin
+        \cvItem{Master Thesis (2021): Performance of Time to First Spike Encoded Spiking Neural Networks}
+        \cvItem{Research Internship (2021): Conversion of TransformerNets}
+        \cvItem{Master Thesis (2021): Conversion of LSTM-based Recurrent Neural Networks}
+        \cvItem{Master Thesis (2021): Conversion of GRU-based Recurrent Neural Networks}
+        \cvItem{Research Internship (2020): Carla as Open Source Platform for Analyzing and Evaluating \\ Autonomous Driving}
+        \cvItem{Master Thesis (2020): Converting Analogue to Spiking Convolutional Neural Networks for \\ Object Detection}
+        \cvItem{Master Thesis (2019): Semantic Segmentation of Integrated Circuit Layout Images}
+    \cvItemizeEnd
+    \vspace{2pt}
 \end{itemize}
  
 % ---------- PUBLICATIONS ------------------------------------------------------
 \section{Publications}
 \begin{itemize}
+    \vspace{2pt}
     \ieeeConference
         {\textbf{E. Mueller}, S. Klimaschka, D. Auge, A. Knoll}
         {Neural Oscillations for Energy-Efficient Hardware Implementation of Sparsely Activated Deep Spiking Neural Networks}
@@ -254,64 +231,63 @@
 \end{itemize}
 
 % ---------- PRESENTATIONS -----------------------------------------------------
-%  Chair of Robotics, Artificial Intelligence and Real-time Systems - TUM School of Computation, Information and Technology 
 \section{Presentations}
 \begin{itemize}
-    \cvEntryBf{Doktorandenhuette}{Mar. 2022}
-    \cvEntryIt{Research Group Talk at the Chair of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
-    \cvEntryBf{Association for the Advancement of Artificial Intelligence (AAAI)}{Feb. 2022}
-    \cvEntryIt{Conference Talk}{}
-    \cvEntryBf{International Conference on Systems and Informatics (ICSAI)}{Nov. 2021}
-    \cvEntryIt{Conference Talk}{}
-    \cvEntryBf{Bernstein Computational Neuroscience Conference}{Sep. 2021}
-    \cvEntryIt{Conference Poster Presentation}{}
-    \cvEntryBf{International Joint Conference on Neural Networks (IJCNN)}{Jul. 2021}
-    \cvEntryIt{Conference Talk}{}
-    \cvEntryBf{Doktorandenhuette}{Nov. 2020}
-    \cvEntryIt{Research Group Talk at the Chair of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
-    \cvEntryBf{Infineon InnoWeek}{Oct. 2020}
-    \cvEntryIt{Internal Research Conference Presentation}{}
-    \cvEntryBf{Bernstein Computational Neuroscience Conference Poster}{Oct. 2020}
-    \cvEntryIt{Conference Poster Presentation}{}
-    \cvEntryBf{Feedback Discussion}{Jul. 2020}
-    \cvEntryIt{Public Presentation}{}
-    \cvEntryBf{Infineon Deep Learning Symposium}{Apr. 2019}
-    \cvEntryIt{Conference Poster Presentation}{}
-    \cvEntryBf{Doktorandenhuette}{Dec. 2018}
-    \cvEntryIt{Research Group Talk at the Chair of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
+    \entryBf{Doktorandenhuette}{Mar. 2022}
+    \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
+    \entryBf{Association for the Advancement of Artificial Intelligence (AAAI)}{Feb. 2022}
+    \entryIt{Conference Talk}{}
+    \entryBf{International Conference on Systems and Informatics (ICSAI)}{Nov. 2021}
+    \entryIt{Conference Talk}{}
+    \entryBf{Bernstein Computational Neuroscience Conference}{Sep. 2021}
+    \entryIt{Conference Poster Presentation}{}
+    \entryBf{International Joint Conference on Neural Networks (IJCNN)}{Jul. 2021}
+    \entryIt{Conference Talk}{}
+    \entryBf{Doktorandenhuette}{Nov. 2020}
+    \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
+    \entryBf{Infineon InnoWeek}{Oct. 2020}
+    \entryIt{Internal Research Conference Presentation}{}
+    \entryBf{Bernstein Computational Neuroscience Conference Poster}{Oct. 2020}
+    \entryIt{Conference Poster Presentation}{}
+    \entryBf{Ph.D. Second Year Presentation}{Jul. 2020}
+    \entryIt{Public Presentation}{}
+    \entryBf{Infineon Deep Learning Symposium}{Apr. 2019}
+    \entryIt{Conference Poster Presentation}{}
+    \entryBf{Doktorandenhuette}{Dec. 2018}
+    \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}{}
 \end{itemize}
 
 % ---------- OPEN SOURCE PROJECTS ----------------------------------------------
 \section{Open Source Projects}
 \begin{itemize}
-    \cvOpenSource
+    \cvOS
         {Convert2SNN}{https://github.com/EtienneMueller/Convert2SNN}
-        \cvItemizeBegin
-            \cvItem{A library for converting conventionally trained continuous-valued neural networks to spiking neural networks}
-            \cvItem{Supports the most important rate-, population- and temporal coded spiking approaches}
-            \cvItem{Supports the development of neuromorphic hardware}
-            \cvItem{Calculates the total number of spiking operations for approximating the total energy consumption}
-        \cvItemizeEnd
-    \cvOpenSource
+    \cvItemizeBegin
+        \cvItem{A library for converting conventionally trained continuous-valued neural networks to spiking \\ neural networks}
+        \cvItem{Supports the most important rate, population and temporal coded spiking approaches}
+        \cvItem{Supports the development of neuromorphic hardware}
+        \cvItem{Calculates the total number of spiking operations for approximating the total energy consumption}
+    \cvItemizeEnd
+    \cvOS
         {Tensorista} {https://github.com/EtienneMueller/Tensorista}
-        \cvItemizeBegin
-            \cvItem{A deep learning framework for the use with the iOS Python environment Pythonista}
-            \cvItem{Interchangeable with TensorFlow Keras}
-        \cvItemizeEnd
-    \cvOpenSource
+    \cvItemizeBegin
+        \cvItem{A deep learning framework for the use with the iOS Python environment Pythonista}
+        \cvItem{Interchangeable with TensorFlow Keras}
+    \cvItemizeEnd
+    \cvOS
         {Razer Blade for Data Science} {https://github.com/EtienneMueller/razer-blade-data-science}
-        \cvItemizeBegin
-            \cvItem{Collection of scripts, tools and instructions for setting up gaming notebooks with Linux and CUDA}
-        \cvItemizeEnd
+    \cvItemizeBegin
+        \cvItem{Collection of scripts, tools and instructions for setting up gaming notebooks with Linux and CUDA}
+    \cvItemizeEnd
 \end{itemize}
 
 % ---------- SKILLS ------------------------------------------------------------
 \section{Skills}
 \begin{itemize}
-    \cvEntryBf{Programming Languages}{}
-    \cvEntryIt{Python (advanced), TensorFlow (advanced), MATLAB (intermediate), Java (basic), C++ (basic)}{}
-    \cvEntryBf{Languages}{}
-    \cvEntryIt{German (native), French (native), English (fluent), Spanish (basic), Chinese (basic)}{}
+    \entryBf{Programming}{}
+    \entryIt{Python (advanced), TensorFlow (advanced), Git (intermediate),  MATLAB (intermediate), Java (basic), \\ C++ (basic)}{}
+    \entryBf{Languages}{}
+    \entryIt{German (native), French (native), English (fluent), Spanish (basic), Chinese (basic)}{}
 \end{itemize}
 
 \end{document}
