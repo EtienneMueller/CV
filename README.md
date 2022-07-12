@@ -10,4 +10,4 @@ My curriculum vitae (CV) written using LaTeX.
     <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/img/cv-2.png" width="800">
 </p>
 
-The compiled .pdf can be converted to .png using ImageMagick by running ```convert -density 300 -alpha remove -bordercolor gray90 -border 5 cv.pdf img/cv.png```
+The compiled .pdf can be converted to .png using ImageMagick by running ```convert -density 300 -alpha remove -bordercolor gray90 -border 5 -strip cv.pdf img/cv.png```
