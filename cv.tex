@@ -72,6 +72,13 @@
 \section{Education}
 %\cvSectionBegin
 \begin{itemize}
+    
+    \entryBf{Postdoctoral Researcher Computational Neuroscience}{Present}
+    \entryIt{University of Melbourne}
+    \cvItemizeBegin
+        \cvItem{Creating a growth algorithm from calcium imaging data from live, alert zebrafish larvae collected over the span of four days}
+    \cvItemizeEnd
+
     \entryBf{Ph.D. in Computer Science}{2023}
     \entryIt{Technical University of Munich, Germany}{}
     \cvItemizeBegin
@@ -104,12 +111,7 @@
 % ---------- EXPERIENCE -------------------------------------------------------
 \section{Professional Experience}
 \begin{itemize}
-    \entryBf{Postdoctoral Researcher Computational Neuroscience}{2023 \textbf{--} Present}
-    \entryIt{University of Melbourne}
-    \cvItemizeBegin
-        \cvItem{Creating a growth algorithm from calcium imaging data from live, alert zebrafish larvae collected over the span of four days}
-    \cvItemizeEnd
-
+    
     \entryBf{AI Engineer}{2022 \textbf{--} 2023}
     \entryIt{Flowers Software GmbH}
     \cvItemizeBegin
@@ -171,6 +173,7 @@
     
     \entryBf{Assistant Consultant}{2010 \textbf{--} 2012}
     \entryIt{Lischke Consulting}
+
 \end{itemize}
 
 % ---------- TEACHING EXPERIENCE ----------------------------------------------
@@ -251,7 +254,7 @@
 \section{Presentations}
 \begin{itemize}
     \entryBf{International Conference on Neuromorphic Computing and Engineering (ICNCE)}{Jun. 2024}
-    \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}
+    \entryIt{Conference Poster Presentation}
 
     \entryBf{Doktorandenhuette}{Mar. 2022}
     \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}
@@ -290,12 +293,7 @@
 % ---------- OPEN SOURCE PROJECTS ---------------------------------------------
 \section{Open Source Projects}
 \begin{itemize}
-    \cvOS
-        {Zebrafish Experiments}{https://github.com/EtienneMueller/zebrafish_experiments}
-    \begin{itemize}[rightmargin=16pt]
-        \cvItem{A library for running deep learning techniques on large, multi-dimensional synchroton images of the zebrafish larvae brain}
-        \cvItem{Built on top of Janelia Cellmap DaCapo for Setup and Daisy as scheduler}
-    \cvItemizeEnd
+
     \cvOS
         {Convert2SNN}{https://github.com/EtienneMueller/Convert2SNN}
     \begin{itemize}[rightmargin=16pt]
@@ -304,12 +302,29 @@
         \cvItem{Developed as a supporting tool for the research of neuromorphic hardware}
         \cvItem{Approximates the energy consumption by calculating the number of spiking operations}
     \cvItemizeEnd
+
+    \cvOS
+        {Zebrafish Experiments}{https://github.com/EtienneMueller/zebrafish_experiments}
+    \begin{itemize}[rightmargin=16pt]
+        \cvItem{A library for running deep learning techniques on large, multi-dimensional synchroton images of the zebrafish larvae brain}
+        \cvItem{Forked from a Janelia library to run on the high-performance computer SPARTAN of the University of Melbourne on a multi-GPU setup.}
+        \cvItem{Built on top of Cellmap DaCapo for Setup and Daisy as scheduler}
+    \cvItemizeEnd
+
+    \cvOS
+        {High Performance Zebrafish}{https://github.com/EtienneMueller/hpz}
+    \begin{itemize}[rightmargin=16pt]
+        \cvItem{Scripts and tools to facilitate recurring tasks on a Slurm-based HPC setup}
+        \cvItem{Automating setup for new users working with zebrafish brain imaging data}
+    \cvItemizeEnd
+
     \cvOS
         {Tensorista} {https://github.com/EtienneMueller/Tensorista}
     \begin{itemize}[rightmargin=16pt]
         \cvItem{A deep learning framework for the use with the iOS Python environment \textit{Pythonista}}
         \cvItem{Built using the same syntax as TensorFlow Keras for compability with desktop environments}
     \cvItemizeEnd
+
     \cvOS
         {Razer Blade for Data Science} {https://github.com/EtienneMueller/razer-blade-data-science}
     \begin{itemize}[rightmargin=16pt]
