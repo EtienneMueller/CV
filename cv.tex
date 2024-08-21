@@ -22,7 +22,8 @@
 \usepackage{titlesec}
 \titleformat{\section}{\scshape \large }{}{0em}{}[\titlerule \vspace{-4pt}]
 
-% ----- Newcommands ------------------------------------------------------------
+% ----- Newcommands -----------------------------------------------------------
+\newcommand{\entry}[1]{\item \small #1\vspace{-7pt}}
 \newcommand{\entryBf}[2]{\item \textbf{#1}\hfill #2\vspace{-9pt}}
 \newcommand{\entryIt}[1]{\item \textit{\small #1}\vspace{-7pt}}
 
@@ -65,7 +66,7 @@
     \faGithub \hspace{.5pt} 
     \href{https://github.com/EtienneMueller/}{github.com/EtienneMueller} |
     \faPhone \hspace{.5pt} 
-    \href{tel:+4915161280989}{+49 151 61280989}
+    \href{tel:+61498003617}{+61 498 003 617}
 \end{center}
 
 % ----- Education -------------------------------------------------------------
@@ -77,13 +78,14 @@
     \entryIt{University of Melbourne}
     \cvItemizeBegin
         \cvItem{Creating a growth algorithm from calcium imaging data from live, alert zebrafish larvae collected over the span of four days}
+        \cvItem{Mapping 4D microscopy data to artificial neural networks for the creation of a surrogate connectome}
     \cvItemizeEnd
 
     \entryBf{Ph.D. in Computer Science}{2023}
     \entryIt{Technical University of Munich, Germany}{}
     \cvItemizeBegin
         \cvItem{Thesis on biologically-inspired neural networks for energy-efficient computation in cooperation with \textit{Infineon Technologies AG}}
-        \cvItem{Development of best-in-class deep spiking neural networks for object detection on large, high-dimensional data (>20 GB)}
+        %\cvItem{Development of best-in-class deep spiking neural networks for object detection on large, high-dimensional data}
         \cvItem{Research of novel biologically-inspired approaches for natural language processing and pattern recognition with varying datasets}
     \cvItemizeEnd
     
@@ -253,7 +255,7 @@
 % ---------- PRESENTATIONS ----------------------------------------------------
 \section{Presentations}
 \begin{itemize}
-    \entryBf{International Conference on Neuromorphic Computing and Engineering (ICNCE)}{Jun. 2024}
+    \entryBf{International Conference on Neuromorphic Computing \& Engineering (ICNCE)}{Jun. 2024}
     \entryIt{Conference Poster Presentation}
 
     \entryBf{Doktorandenhuette}{Mar. 2022}
@@ -336,7 +338,7 @@
 \section{Skills}
 \begin{itemize}
     \entryBf{Programming}{}
-    \entryIt{Python (advanced), TensorFlow (advanced), Git (intermediate),  MATLAB (intermediate), Java (basic), \\C++ (basic)}
+    \entry{\textit{Advanced:} Python, TensorFlow -- \textit{Intermediate:} Git, MATLAB, Bash -- \textit{Basic:} Java, C++, Swift, PyTorch, JAX, SQL}
     \entryBf{Languages}{}
     \entryIt{German (native), French (native), English (fluent), Spanish (basic), Chinese (basic)}
 \end{itemize}
