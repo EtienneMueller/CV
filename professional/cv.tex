@@ -1,0 +1,229 @@
+\documentclass[a4paper,11pt]{article}
+
+% ----- Packages and settings -------------------------------------------------
+% Special characters, symbols and icons
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\usepackage{fontawesome}
+
+% Adjust margins
+\usepackage{geometry}
+\geometry{left=36pt, top=50pt, right=36pt, bottom=60pt}
+
+% Links and lists
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{label={}, leftmargin=16pt, rightmargin=16pt}
+
+% Turn off page numbering
+\pagenumbering{gobble}
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\scshape \large }{}{0em}{}[\titlerule \vspace{-4pt}]
+
+% ----- Newcommands -----------------------------------------------------------
+\newcommand{\entry}[1]{\item \small #1\vspace{-7pt}}
+\newcommand{\entryBf}[2]{\item \textbf{#1}\hfill #2\vspace{-9pt}}
+\newcommand{\entryIt}[1]{\item \textit{\small #1}\vspace{-7pt}}
+
+\newcommand{\cvItemizeBegin}{\begin{itemize}[rightmargin=75pt]}
+\newcommand{\cvItemizeEnd}{\end{itemize} \vspace{-7pt}}
+\newcommand{\cvItem}[1]{\item[--] \small #1\vspace{-2pt}}
+
+% Open source projects on Github 
+\newcommand{\cvOS}[2]{\item \textbf{#1} \href{#2}{\faGithub} \vspace{-7pt}}
+
+% Publications IEEE style
+% https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf
+\newcommand{\publicationItemizeBegin}{\begin{itemize} \vspace{2pt}}
+\newcommand{\publicationItemizeEnd}{\end{itemize}}
+
+% Initials and Surname, “Title,” in Conference, Location, Year, pp. X.
+\newcommand{\ieeeConference}[6]{
+    \item \small #1, "#2," in \textit{#3,} #4, #5, #6. \vspace{-5pt}}
+
+% Initials and Surname, “Title,” Journal, vol., issue, page numbers, Month Year.
+\newcommand{\ieeeJournal}[7]{
+    \item \small #1, "#2," \textit{#3,} #4, #5, #6, #7. \vspace{-5pt}}
+
+% Initials and Surname, “Title,” Company., City., State, Report number, year.
+\newcommand{\ieeeReport}[6]{
+    \item \small #1, "#2," #3, #4, #5, #6. \vspace{-5pt}}
+
+
+% ----- Begin Document --------------------------------------------------------
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge Etienne Mueller} \\ 
+    \vspace{12pt}
+    \small
+    \faHome \hspace{.5pt} 
+    \href{https://www.etiennemueller.com}{etiennemueller.com} |
+    \faEnvelope \hspace{.5pt} 
+    \href{mailto:etienne.mueller@pm.me}{etienne.mueller@pm.me} |
+    \faPhone \hspace{.5pt} 
+    \href{tel:+61498003617}{+61 498 003 617}
+\end{center}
+
+
+
+% ---------- EXPERIENCE -------------------------------------------------------
+\section{Professional Experience}
+\begin{itemize}
+    \entryBf{Postdoctoral Researcher AI \& Computational Neuroscience}{2023 \textbf{--} present}
+    \entryIt{University of Melbourne}
+    \cvItemizeBegin
+        \cvItem{Development of a neural network growth algorithm from brain imaging data in different developmental stages for more efficient AI applications}
+        \cvItem{Mapping 4D microscopy data to artificial neural networks for the creation of a surrogate connectome using Python, JAX, and NEST}
+    \cvItemizeEnd
+    
+    \entryBf{AI Engineer}{2022 \textbf{--} 2023}
+    \entryIt{Flowers Software GmbH}
+    \cvItemizeBegin
+        \cvItem{Building the AI research department of a seed-financed startup}
+        \cvItem{Creating a TensorFlow-based information extraction workflow to identify the recurring position in invoices to run on AWS}
+    \cvItemizeEnd
+
+    \entryBf{Technical Advisor}{2021 \textbf{--} 2022}
+    \entryIt{Technical University of Munich}
+    \cvItemizeBegin
+        \cvItem{Led the technical coordination of a pilot case for an EU-funded (Horizon 2020) project (SHOP4CF)}
+        \cvItem{Creation of modular tools for autonomous factories for Industry 4.0}
+    \cvItemizeEnd
+
+    \entryBf{AI Researcher}{2018 \textbf{--} 2021}
+    \entryIt{Infineon Technologies AG}
+    \cvItemizeBegin
+        \cvItem{Development of a Python- and TensorFlow-based open-source toolbox for conventional to spiking neural network conversion}
+        \cvItem{Evaluation of the energy efficiency of different neuromorphic computing approaches for autonomous driving hardware}
+    \cvItemizeEnd
+    
+    \entryBf{Component Manager}{2018 \textbf{--} 2018}
+    \entryIt{BMW via aam it GmbH}
+    \cvItemizeBegin
+        \cvItem{Technical supervision of cooling water pumps for electric and combustion vehicles for BMW, Mini and Rolls Royce}
+        \cvItem{Requirement engineering and long-term testing of different models in cooperation with Bosch and Continental}
+    \cvItemizeEnd
+    
+    \entryBf{Formula Student Member @ e-gnition Hamburg e.V.}{2012 {--} 2017}
+    \entryIt{Developer Driverless Actuator Technology (2016 -- 2017)}
+    \cvItemizeBegin
+        \cvItem{1st Place Formula Student Driverless: Autonomous Design}
+        \cvItem{3rd Place Formula Student Driverless: Overall}
+    \cvItemizeEnd
+    \vspace{-4pt}
+    \entryIt{Division Manager Business Plan (2014 -- 2016)}
+    \cvItemizeBegin
+        \cvItem{Special Award for educational video "How to Business Plan" at Formula Student Hungary}
+    \cvItemizeEnd
+    \vspace{-4pt}
+    \entryIt{President \& Team Captain (2013 -- 2014)}
+    \cvItemizeBegin
+        \cvItem{Special Award for Ecological Design by Magna Steyr}
+    \cvItemizeEnd
+    \vspace{-4pt}
+    \entryIt{Division Manager Aerodynamics (2012 -- 2013)}
+    \vspace{2pt}
+    
+    \entryBf{Co-founder \& CEO}{2015 \textbf{--} 2016}
+    \entryIt{Slive}
+    \cvItemizeBegin
+        \cvItem{Development of smart wearable devices and location-based sharing algorithms}
+        \cvItem{Awarded Nissen Foundation Start-Up Grant endowed with 3,000\euro}
+    \cvItemizeEnd
+    
+    \entryBf{Research Assistant}{2013 \textbf{--} 2014}
+    \entryIt{Institute of Aircraft Production, Technical University of Hamburg}
+    \cvItemizeBegin
+        \cvItem{Manufacturing of components via a six-axis industrial robot and CAM software}
+    \cvItemizeEnd
+    
+    \entryBf{Assistant Consultant}{2010 \textbf{--} 2012}
+    \entryIt{Lischke Consulting}
+
+\end{itemize}
+
+% ----- Education -------------------------------------------------------------
+\section{Education}
+%\cvSectionBegin
+\begin{itemize}
+    \entryBf{Ph.D. in Computer Science}{2023}
+    \entryIt{Technical University of Munich, Germany}{}
+    
+    \entryBf{M.Sc. in Product Development, Materials and Production}{2017}
+    \entryIt{Technical University of Hamburg, Germany}
+    
+    \entryBf{Semester Abroad}{2016}
+    \entryIt{Institut Catholique d'Arts et M\'etiers Nantes, France}
+    
+    \entryBf{B.Sc. in Mechanical Engineering}{2014}
+    \entryIt{Technical University of Hamburg, Germany}
+\end{itemize}
+
+% ---------- SKILLS -----------------------------------------------------------
+\section{Skills}
+\begin{itemize}
+    \entryBf{Programming and Frameworks}{}
+    \entry{\textit{Expert:} Python, TensorFlow}
+    \entry{\textit{Advanced:} Git, Bash, JAX}
+    \entry{\textit{Intermediate:} Java, SQL, Swift, C++, PyTorch}
+    \entryBf{Languages}{}
+    \entryIt{German (native), French (native), English (fluent), Spanish (basic), Chinese (basic)}
+\end{itemize}
+
+
+
+% ---------- OPEN SOURCE PROJECTS ---------------------------------------------
+\section{Open Source Projects}
+\begin{itemize}
+
+    \cvOS
+    {High-Performance Zebrafish (HPZ)}{https://github.com/EtienneMueller/hpz}
+    \begin{itemize}[rightmargin=16pt]
+        \cvItem{Python tools and bash scripts to facilitate recurring tasks on a Slurm-based HPC setup}
+        \cvItem{End-to-end pipeline for loading microscopy data from a remote server to preprocess, run neuron- and spike-detection, and warp to standard model}
+        \cvItem{Automating setup for new users working with zebrafish brain imaging data}
+    \cvItemizeEnd
+
+    \cvOS
+        {Convert2SNN}{https://github.com/EtienneMueller/Convert2SNN}
+    \begin{itemize}[rightmargin=16pt]
+        \cvItem{A Python- and TensorFlow-based library for converting conventionally trained neural networks with continuous-valued activation functions to spiking neural networks with minimal to no loss}
+        \cvItem{Supports the most important rate, population, and temporal coded approaches for spiking neurons}
+        \cvItem{Developed to support neuromorphic hardware research by approximating the energy consumption of spiking operations}
+    \cvItemizeEnd
+
+    \cvOS
+        {Razer Blade for Data Science} {https://github.com/EtienneMueller/razer-blade-data-science}
+    \begin{itemize}[rightmargin=16pt]
+        \cvItem{Collection of instructions, settings, and bash scripts for setting up Nvidia-based gaming notebooks to work with Linux and CUDA}
+    \cvItemizeEnd
+\end{itemize}
+
+% ---------- PUBLICATIONS -----------------------------------------------------
+\section{Selected Publications}
+\publicationItemizeBegin
+    \ieeeConference
+        {\textbf{E. Mueller}, S. Klimaschka, D. Auge, A. Knoll}
+        {Neural Oscillations for Energy-Efficient Hardware Implementation of Sparsely Activated Deep Spiking Neural Networks}
+        {Association for the Advancement of Artificial Intelligence (AAAI) Practical DL}{Online (Vancouver, Canada)}{2022}{pp. 1-7}
+    \ieeeConference
+        {\textbf{E. Mueller}, V. Studenyak, D. Auge, A. Knoll}
+        {Spiking Transformer Networks: A Rate Coded Approach for Processing Sequential Data}
+        {7th International Conference on Systems and Informatics (ICSAI)}{Online (Jiaxing, China)}{2021}{pp. 1-5}
+    \ieeeConference
+        {\textbf{E. Mueller}, J. Hansjakob, D. Auge, A. Knoll}
+        {Minimizing Inference Time: Optimization Methods for Converted Deep Spiking Neural Networks}
+        {International Joint Conference on Neural Networks (IJCNN)}{Online (Shenzen, China)}{2021}{pp. 1-8}
+    \ieeeJournal
+        {D. Auge, J. Hille, \textbf{E. Mueller}, A. Knoll}
+        {A Survey of Encoding Techniques for Signal Processing in Spiking Neural Networks}
+        {Neural Processing Letters}{vol. 53}{issue 6}{pp. 4693-4710}{Dec 2021}
+\publicationItemizeEnd
+
+See \underline{\href{https://scholar.google.de/citations?user=06qwunQAAAAJ&hl=en}{Google Scholar profile}} for a full list.
+
+% -----------------------------------------------------------------------------
+\end{document}
