@@ -1,0 +1,385 @@
+% ----- Packages and settings -------------------------------------------------
+% Special characters, symbols and icons
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\usepackage{fontawesome}
+
+% Adjust margins
+\usepackage{geometry}
+\geometry{left=32pt, top=50pt, right=32pt, bottom=60pt}
+
+% Links and lists
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{label={}, leftmargin=0pt, rightmargin=0pt}
+
+% Turn off page numbering
+\pagenumbering{gobble}
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\scshape \large }{}{0em}{}[\titlerule \vspace{-4pt}]
+
+% ----- COMMANDS --------------------------------------------------------------
+\newcommand{\entry}[3]{\item \textbf{#1} (\textit{#2})\hfill \textbf{#3}\vspace{-7pt}}
+\newcommand{\entryBf}[2]{\item \textbf{#1}\hfill #2\vspace{-9pt}}
+\newcommand{\entryIt}[1]{\item \textit{\small #1}\vspace{-7pt}}
+
+\newcommand{\cvItemizeBegin}{\begin{itemize}[leftmargin=12pt]}
+\newcommand{\cvItemizeEnd}{\end{itemize} \vspace{-7pt}}
+\newcommand{\cvItem}[1]{\item[--] \small #1\vspace{-2pt}}
+
+% Open source projects on Github 
+\newcommand{\cvOS}[2]{\item \textbf{#1} \href{#2}{\faGithub} \vspace{-7pt}}
+
+% Publications IEEE style
+% https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf
+\newcommand{\publicationItemizeBegin}{\begin{itemize} \vspace{2pt}}
+\newcommand{\publicationItemizeEnd}{\end{itemize}}
+
+%\newcommand{\ieee}[6]{
+%     \item \small #1, "#2," in \textit{#3,} #4, #5, #6. \vspace{-5pt}}
+% Initials + Surname, “Title,” in Conference, Location, Year, pp. X.
+\newcommand{\ieeeConference}[6]{
+    \item \small #1, "#2," in \textit{#3,} #4, #5, #6. \vspace{-5pt}}
+% Initials + Surname, “Title,” Journal, vol., issue, page numbers, Month Year.
+\newcommand{\ieeeJournal}[7]{
+    \item \small #1, "#2," \textit{#3,} #4, #5, #6, #7. \vspace{-5pt}}
+% Initials + Surname, “Title,” Company., City., State, Report number, year.
+\newcommand{\ieeeReport}[6]{
+    \item \small #1, "#2," #3, #4, #5, #6. \vspace{-5pt}}
+
+
+% ----- HEADER ----------------------------------------------------------------
+\newcommand{\myName}{
+    \textbf{\Huge Etienne Mueller} \\ \small \vspace{4pt}}
+\newcommand{\myWebsite}{
+    \faHome \hspace{.5pt} \href{https://www.etiennemueller.com}{etiennemueller.com} }
+\newcommand{\myGithub}{
+    \faGithub \hspace{.5pt} \href{https://github.com/EtienneMueller/}{github.com/EtienneMueller} }
+
+% For privacy, I added my postal address and phone number to a differnt file. If the file is not present it will use these placeholders insted. Feel free to remove the `if` statement.
+\IfFileExists{personal_data.tex}{\input{personal_data.tex}}{
+\newcommand{\myAddress}{(address hidden in web version) \\ \vspace{2pt}}
+\newcommand{\myMailAddress}{\faEnvelope \hspace{.5pt} \href{mailto:contact@etiennemueller.com}{contact@etiennemueller.com} }
+\newcommand{\myPhoneNumber}{\faPhone \hspace{.5pt} \href{(hidden)}{(hidden)}}
+}
+
+% ----- EXPERIENCE ------------------------------------------------------------
+% Postdoctoral Researcher @ University of Melbourne
+\newcommand{\postdoc}{
+    \entryBf{Postdoctoral Researcher AI \& Computational Neuroscience}{since 2023}
+    \entryIt{University of Melbourne, Australia}}
+\newcommand{\postdocDense}{
+    \entry{Postdoctoral Researcher}{University of Melbourne, Australia}{2023 \textbf{--} present}}
+\newcommand{\postdocOne}{
+    \cvItem{Developing a neural network growth algorithm to create biologically-inspired memory cells for more efficient recurrent neural networks, using ML for simulations of brain imaging data across different developmental stages using JAX}}
+\newcommand{\postdocTwo}{
+    \cvItem{Running deep convolutional neural networks on a Slurm-based HPCwith up to 4xH100 GPUs per node for automated segmentation of synchrotron brain imaging data, reducing the need for manual annotation by a factor of 10}}
+
+
+% AI Engineer @ Flowers Software
+\newcommand{\expFlowers}{
+    \entryBf{AI Engineer}{2022 \textbf{--} 2023}
+    \entryIt{Flowers Software GmbH}}
+\newcommand{\expFlowersDense}{
+    \entry{AI Engineer}{Flowers Software, Germany}{2022 \textbf{--} 2023}}
+\newcommand{\expFlowersOne}{
+    \cvItem{Established the AI research department at a seed-financed startup, deploying deep learning infrastructure from scratch}}
+\newcommand{\expFlowersTwo}{
+    \cvItem{Developed a TensorFlow-based information extraction workflow on AWS to identify recurring positions on invoices that complies with EU data privacy law, saving the company over \euro5,000/month by eliminating third-party API costs}}
+
+% Technical Advisor @ TUM
+\newcommand{\expTum}{
+    \entryBf{Technical Advisor}{2021 \textbf{--} 2022}
+    \entryIt{Technical University of Munich}}
+\newcommand{\expTumOne}{
+    \cvItem{Led the technical coordination of a pilot case for an EU-funded (Horizon 2020) project (SHOP4CF)}}
+\newcommand{\expTumTwo}{
+    \cvItem{Creation of modular tools for autonomous factories for Industry 4.0}}
+
+% AI Researcher @ Infineon Technologies
+\newcommand{\expInfineon}{
+    \entryBf{AI Researcher}{2018 \textbf{--} 2022}
+    \entryIt{Infineon Technologies AG}}
+\newcommand{\expInfineonDense}{
+    \entry{AI Researcher}{Infineon Technologies, Germany}{2018 \textbf{--} 202}}
+\newcommand{\expInfineonOne}{
+    \cvItem{Research in neuromorphic computing and spiking neural networks, leading to 11 first- and second-author publications}}
+\newcommand{\expInfineonTwo}{
+    \cvItem{Developed a TensorFlow-based toolbox for converting conventional to spiking neural networks, which was subsequently used in a research project to reduce the simulation time of hardware components in neuromorphic systems by half}}
+
+
+% Component Manager @ BMW AG
+\newcommand{\expBmw}{
+    \entryBf{Component Manager}{2017 \textbf{--} 2018}
+    \entryIt{BMW AG}}
+\newcommand{\expBmwOne}{
+    \cvItem{Technical supervision of cooling water pumps for electric and combustion vehicles for BMW, Mini and Rolls Royce}}
+\newcommand{\expBmwTwo}{
+    \cvItem{Requirement engineering and long-term testing of different models in cooperation with Bosch and Continental}}
+
+% e-gnition (Formula Student)
+\newcommand{\expEgnition}{
+    \entryBf{Formula Student Member @ e-gnition Hamburg e.V.}{2012 {--} 2017}}
+\newcommand{\expEgnitionDriverless}{
+    \entryIt{Developer Driverless Actuator Technology (2016 -- 2017)}
+    \cvItemizeBegin
+        \cvItem{1st Place Formula Student Driverless: Autonomous Design}
+        \cvItem{3rd Place Formula Student Driverless: Overall}
+    \cvItemizeEnd
+    \vspace{-4pt}}
+\newcommand{\expEgnitionBusinessPlan}{
+    \entryIt{Division Manager Business Plan (2014 -- 2016)}
+    \cvItemizeBegin
+        \cvItem{Special Award for educational video "How to Business Plan" at Formula Student Hungary}
+    \cvItemizeEnd
+    \vspace{-4pt}}
+\newcommand{\expEgnitionTeamLeader}{
+    \entryIt{President \& Team Captain (2013 -- 2014)}
+    \cvItemizeBegin
+        \cvItem{Special Award for Ecological Design by Magna Steyr}
+    \cvItemizeEnd
+    \vspace{-4pt}}
+\newcommand{\expEgnitionAerodynamics}{
+    \entryIt{Division Manager Aerodynamics (2012 -- 2013)}
+    \vspace{2pt}}
+
+% CEO & Founder @ Slive
+\newcommand{\expSlive}{
+    \entryBf{Co-founder \& CEO}{2015 \textbf{--} 2016}
+    \entryIt{Slive}}
+\newcommand{\expSliveDense}{
+    \entry{Co-founder \& CEO}{Slive, Germany}{2015 \textbf{--} 2016}}
+\newcommand{\expSliveOne}{
+    \cvItem{Developed smart wearable devices and location-based algorithms for hands-free data use in industrial environment}}
+\newcommand{\expSliveTwo}{
+    \cvItem{Secured the Nissen Foundation Start-Up Grant (\euro3,000) to support early-stage product development and business growth}}
+
+% Research Assistant @ TUHH
+\newcommand{\expTuhh}{
+    \entryBf{Research Assistant}{2013 \textbf{--} 2013}
+    \entryIt{Institute of Aircraft Production, Technical University of Hamburg}}
+\newcommand{\expTuhhOne}{
+    \cvItem{Manufacturing of components via a six-axis industrial robot and CAM software}}
+
+
+% ----- EDUCATION -------------------------------------------------------------
+% PhD
+\newcommand{\phd}{
+    \entryBf{Ph.D. in Computer Science}{2023}
+    \entryIt{Technical University of Munich, Germany}{}}
+\newcommand{\phdDense}{
+    \entry{Ph.D. in Computer Science}{Technical University of Munich, Germany}{2023}}
+\newcommand{\phdOne}{
+    \cvItem{Thesis on biologically-inspired neural networks for energy-efficient computation}}
+\newcommand{\phdTwo}{
+    \cvItem{Research of novel biologically-inspired approaches for natural language processing and pattern recognition with varying datasets}}
+
+% M.Sc.
+\newcommand{\msc}{
+    \entryBf{M.Sc. in Product Development and Production}{2017}
+    \entryIt{Technical University of Hamburg, Germany}}
+\newcommand{\mscDense}{
+    \entry{M.Sc. in Product Development}{Technical University of Hamburg, Germany}{2017}}
+\newcommand{\mscOne}{
+    \cvItem{Development of autonomous racing vehicles}}
+\newcommand{\mscTwo}{
+    \cvItem{Awarded Best Autonomous Design at Formula Student Germany}}
+\newcommand{\mscThree}{
+    \cvItem{Awarded the Incentive Prize of the Technical University of Hamburg endowed with 1,500\euro}}
+
+% Erasmus
+\newcommand{\erasmus}{
+    \entryBf{Semester Abroad}{2016}
+    \entryIt{Institut Catholique d'Arts et M\'etiers Nantes, France}}
+\newcommand{\erasmusDense}{
+    \entry{Semester Abroad}{Institut Catholique d'Arts et M\'etiers Nantes, France}{2016}}
+\newcommand{\erasmusOne}{
+    \cvItem{Designing tools for workflow optimization of a waste utilization plant using CAD}}
+
+% B.Sc.
+\newcommand{\bsc}{
+    \entryBf{B.Sc. in Mechanical Engineering}{2014}
+    \entryIt{Technical University of Hamburg, Germany}}
+\newcommand{\bscDense}{
+    \entry{B.Sc. in Mechanical Engineering}{Technical University of Hamburg, Germany}{2014}}
+\newcommand{\bscOne}{
+    \cvItem{Measuring and increasing the accuracy and repeatability of industrial robots using MATLAB}}
+
+
+% ----- SKILLS ----------------------------------------------------------------
+\newcommand{\skillsProgramming}{
+    \item \textbf{Programming} \hspace{2mm} Python, TensorFlow, JAX, MATLAB, Bash, Java, C++, SQL\vspace{-7pt}}
+\newcommand{\skillsLanguages}{
+    \item \textbf{Languages} \hspace{8.3mm} German (native), French (native), English (fluent), Spanish (basic), Chinese (basic)\vspace{-7pt}}
+\newcommand{\skillsInterests}{
+    \item \textbf{Interests} \hspace{11mm} Music (Piano, Ukulele), Fitness, Health}
+
+% ----- OPEN SOURCE PROJECTS --------------------------------------------------
+\newcommand{\fossHPZ}{
+    \cvOS {High-Performance Zebrafish (HPZ)}{https://github.com/EtienneMueller/hpz}}
+\newcommand{\fossHPZOne}{
+    \cvItem{A Python and bash toolkit designed to automate recurring brain imaging data tasks on a Slurm-based HPC setup}}
+\newcommand{\fossHPZTwo}{
+    \cvItem{End-to-end pipeline that consolidates multiple manual steps for loading, preprocessing, and detecting neurons and spikes in microscopy data into a single automated process, reducing manual intervention and error by a factor of five}}
+\newcommand{\fossHPZThree}{
+    \cvItem{Automated setup for new users to easily work with zebrafish brain imaging data, improving onboarding efficiency}}
+
+
+\newcommand{\fossConvSnn}{
+    \cvOS {Convert2SNN}{https://github.com/EtienneMueller/Convert2SNN}}
+\newcommand{\fossConvSnnOne}{
+    \cvItem{A TensorFlow-based library that converts conventionally trained neural networks with continuous activation functions to spiking neural networks, with minimal to no performance loss, to estimate energy consumption in neuromorphic systems}}
+\newcommand{\fossConvSnnTwo}{
+    \cvItem{Supports key spike encoding techniques, including rate, population, and temporal coding, with the ability to estimate spike counts for efficiency evaluation, reducing the need for extensive hardware simulations during development}}
+
+
+\newcommand{\fossRazerDataScience}{
+    \cvOS {Razer Blade for Data Science} {https://github.com/EtienneMueller/razer-blade-data-science}}
+\newcommand{\fossRazerDataScienceOne}{
+    \cvItem{Collection of instructions, settings, and bash scripts for setting up Nvidia-based gaming notebooks to work with Linux and CUDA}}
+
+
+% ----- TEACHING EXPERIENCE ---------------------------------------------------
+\newcommand{\lecturer}{
+    \entryBf{Lecturer in Cognitive Systems}{2019 \textbf{--} 2021}
+    \vspace{2pt}}
+\newcommand{\lecturerOne}{
+    \cvItem{Covering topics such as cognition, biological inspired computational models and neurorobotics}}
+\newcommand{\lecturerTwo}{
+    \cvItem{Creating and grading of exams for over 400 students}}
+
+                    
+\newcommand{\supervision}{
+    \entryBf{Thesis Supervision in Deep Learning and Spiking Neural Networks}
+    {2018 \textbf{--} 2021}
+    \vspace{2pt}}
+\newcommand{\supervisionOne}{
+    \cvItem{Master Thesis (2021): Performance of Time to First Spike Encoded Spiking Neural Networks}}
+\newcommand{\supervisionTwo}{
+    \cvItem{Research Internship (2021): Conversion of Analog to Spiking Transformer Networks}}
+\newcommand{\supervisionThree}{
+    \cvItem{Master Thesis (2021): Conversion of Analog LSTM-based Recurrent Neural Networks}}
+\newcommand{\supervisionFour}{
+    \cvItem{Master Thesis (2021): Conversion of Analog GRU-based Recurrent Neural Networks}}
+\newcommand{\supervisionFive}{
+    \cvItem{Research Internship (2020): Carla as Open Source Platform for Analyzing and Evaluating Autonomous Driving}}
+\newcommand{\supervisionSix}{
+    \cvItem{Master Thesis (2020): Converting Analog to Spiking Convolutional Neural Networks for Object Detection}}
+\newcommand{\supervisionSeven}{
+    \cvItem{Master Thesis (2019): Semantic Segmentation of Integrated Circuit Layout Images}}
+                    
+
+% ----- PUBLICATIONS ----------------------------------------------------------
+\newcommand{\publicationInCIT}{
+    \ieeeConference
+    {\textbf{E. Mueller}, W. Qin}
+    {Reverse Engineering Neural Connectivity: Mapping Neural Activity Data to Artificial Neural Networks for Synaptic Strength Analysis}
+    {8th International Conference on Information Technology (InCIT)}
+    {Chonburi, Thailand and Kanazawa, Japan}{2024}{(accepted)}}
+\newcommand{\publicationAAAI}{
+    \ieeeConference
+    {\textbf{E. Mueller}, S. Klimaschka, D. Auge, A. Knoll}
+    {Neural Oscillations for Energy-Efficient Hardware Implementation of Sparsely Activated Deep Spiking Neural Networks}
+    {Association for the Advancement of Artificial Intelligence (AAAI) Practical DL}{Online (Vancouver, Canada)}{2022}{pp. 1-7}}
+\newcommand{\publicationPopulationCoded}{
+    \ieeeConference
+    {\textbf{E. Mueller}, D. Auge, A. Knoll}
+    {Exploiting Inhomogeneities of Subthreshold Transistors as Populations of Spiking Neurons}
+    {International Conference on Natural Computation, Fuzzy Systems and Knowledge Discovery (ICNC-FSKD)}{Online (Fuzhou, China)}{2022}{pp. 1-8}}
+\newcommand{\publicationSpikingTransformer}{
+    \ieeeConference
+    {\textbf{E. Mueller}, V. Studenyak, D. Auge, A. Knoll}
+    {Spiking Transformer Networks: A Rate Coded Approach for Processing Sequential Data}
+    {7th Int. Conference on Systems and Informatics (ICSAI)}{Online (Jiaxing, China)}{2021}{pp. 1-5}}
+\newcommand{\publicationRateCoded}{
+    \ieeeConference
+    {\textbf{E. Mueller}, J. Hansjakob, D. Auge, A. Knoll}
+    {Minimizing Inference Time: Optimization Methods for Converted Deep Spiking Neural Networks}
+    {International Joint Conference on Neural Networks (IJCNN)}{Online (Shenzen, China)}{2021}{pp. 1-8}}
+\newcommand{\publicationEncodingSurvey}{
+    \ieeeJournal
+    {D. Auge, J. Hille, \textbf{E. Mueller}, A. Knoll}
+    {A Survey of Encoding Techniques for Signal Processing in Spiking Neural Networks}
+    {Neural Processing Letters}{vol. 53}{issue 6}{pp. 4693-4710}{Dec 2021}}
+\newcommand{\publicationBernstainTwo}{
+    \ieeeConference
+    {\textbf{E. Mueller}, D. Auge, A. Knoll}
+    {Normalization Hyperparameter Search for Converted Spiking Neural Networks}
+    {Bernstein Computational Neuroscience Conference}{Online (Berlin, Germany)}{2021}{P 8}}
+\newcommand{\publicationDAICAFGR}{
+    \ieeeConference
+    {D. Auge, J. Hille, \textbf{E. Mueller}, A. Knoll}
+    {Hand Gesture Recognition in Range-Doppler Images Using Binary Activated Spiking Neural Networks}
+    {IEEE International Conference on Automatic Face and Gesture Recognition}{Online (Jodhpur, India)}{2021}{pp. 1-7}}
+\newcommand{\publicationDAICANN}{
+    \ieeeConference
+    {D. Auge, J. Hille, F. Kreutz, \textbf{E. Mueller}, A. Knoll}
+    {End-to-end Spiking Neural Network for Speech Recognition Using Resonating Input Neurons}
+    {30th International Conference on Artificial Neural Networks (ICANN)}{Online (Bratislave, Slovakia)}{2021}{pp. 245-256}}
+\newcommand{\publicationBernsteinOne}{
+    \ieeeConference
+    {\textbf{E. Mueller}, J. Hansjakob, D. Auge}
+    {Faster Conversion of Analog to Spiking Neural Networks by Error Centering}
+    {Bernstein Computational Neuroscience Conference}{Online (Berlin, Germany)}{2020}{P 146}}
+\newcommand{\publicationBernsteinDA}{
+    \ieeeConference
+    {D. Auge, P. Wenner, \textbf{E. Mueller}}
+    {Hand Gesture Recognition using Hierarchical Temporal Memory on Radar Sequence Data}
+    {Bernstein Computational Neuroscience Conference}{Online (Berlin, Germany)}{2020}{P 3}}
+\newcommand{\publicationReport}{
+    \ieeeReport
+    {Daniel Auge, \textbf{E. Mueller}}
+    {Resonate-and-Fire Neurons as Frequency Selective Input Encoders for Spiking Neural Networks}
+    {Chair of Informatics}{TUM}{Munich}{Technical Report TUM-I2083}{2020}}
+
+\newcommand{\seeGoogleScholar}{\item See \underline{\href{https://scholar.google.de/citations?user=06qwunQAAAAJ&hl=en}{Google Scholar profile}} for a full list.}
+
+
+% ----- PRESENTATIONS ---------------------------------------------------------
+\newcommand{\presentations}{
+    \begin{itemize}
+        \entryBf{Accepted: The 8th International Conference on Information Technology (InCIT)}{Nov. 2024}
+        \entryIt{Conference Talk}
+
+        \entryBf{Bioinformatics Meetup}{Aug. 2024}
+        \entryIt{Talk at Melbourne Bioinformatics}
+
+        \entryBf{International Conference on Neuromorphic Computing \& Engineering (ICNCE)}{Jun. 2024}
+        \entryIt{Conference Poster Presentation}
+
+        \entryBf{Doktorandenhuette}{Mar. 2022}
+        \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}
+        
+        \entryBf{Association for the Advancement of Artificial Intelligence (AAAI)}{Feb. 2022}
+        \entryIt{Conference Talk}
+        
+        \entryBf{International Conference on Systems and Informatics (ICSAI)}{Nov. 2021}
+        \entryIt{Conference Talk}
+        
+        \entryBf{Bernstein Computational Neuroscience Conference}{Sep. 2021}
+        \entryIt{Conference Poster Presentation}
+        
+        \entryBf{International Joint Conference on Neural Networks (IJCNN)}{Jul. 2021}
+        \entryIt{Conference Talk}
+        
+        \entryBf{Doktorandenhuette}{Nov. 2020}
+        \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}
+        
+        \entryBf{Infineon InnoWeek}{Oct. 2020}
+        \entryIt{Internal Research Conference Presentation}
+        
+        \entryBf{Bernstein Computational Neuroscience Conference Poster}{Oct. 2020}
+        \entryIt{Conference Poster Presentation}
+        
+        \entryBf{Ph.D. Second Year Presentation}{Jul. 2020}
+        \entryIt{Public Presentation}
+        
+        \entryBf{Infineon Deep Learning Symposium}{Apr. 2019}
+        \entryIt{Conference Poster Presentation}
+        
+        \entryBf{Doktorandenhuette}{Dec. 2018}
+        \entryIt{Talk at the Department of Robotics, Artificial Intelligence and Real-time Systems, TUM}
+    \end{itemize}
+}
