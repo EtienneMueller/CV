@@ -42,22 +42,22 @@ A LaTeX editor (e.g., TeXworks, Overleaf, or VS Code with the LaTeX Workshop ext
 ### Resume
 
 <p align="center">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/igms/resume.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/resume.png" width="800">
 </p>
 
 ### Professional
 
 <p align="center">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/igms/professional-0.png" width="800">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/imgs/professional-1.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/professional-0.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/professional-1.png" width="800">
 </p>
 
 ### Academic CV
 
 <p align="center">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/igms/academic-0.png" width="800">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/imgs/academic-1.png" width="800">
-    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/imgs/academic-2.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/academic-0.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/academic-1.png" width="800">
+    <img alt="Screenshot" src="https://raw.githubusercontent.com/EtienneMueller/CV/main/imgs/academic-2.png" width="800">
 </p>
 
 These .png files have been created using ImageMagick. The current version gives an error due to security policies and the line `<policy domain="coder" rights="read | write" pattern="PDF" />` has to be added to `/etc/ImageMagick-6/policy.xml`
