@@ -1,155 +1,169 @@
 \documentclass[a4paper,11pt]{article}
+
+\newcommand{\entry}[3]{
+    \item \textbf{#1}\hfill #3\vspace{-9pt}
+    \item \textit{\small #2}\vspace{-7pt}}
+
 \input{content.tex}
 
+% ----- Document --------------------------------------------------------------
+
 \begin{document}
-    \begin{center}
-        \myName
-        \myAddress
-        \myWebsite | \myMailAddress | \myGithub | \myPhoneNumber 
-    \end{center}
+\begin{center}
+    \myName
+    \myAddress
+    \myWebsite | \myMailAddress | \myGithub | \myPhoneNumber 
+\end{center}
 
-    % EDUCATION
-    \section{Education}
-        \begin{itemize}
-            \postdoc
-                \cvItemizeBegin
-                    \postdocOne
-                    \postdocTwo
-                \cvItemizeEnd
-            \summerSchool
-                \cvItemizeBegin
-                    \summerSchoolOne
-                    \summerSchoolTwo
-                \cvItemizeEnd
-            \phd
-                \cvItemizeBegin
-                    \phdOne
-                    \phdTwo
-                \cvItemizeEnd
-            \msc
-                \cvItemizeBegin
-                    \mscOne
-                    \mscTwo
-                    \mscThree
-                \cvItemizeEnd
-            \erasmus
-                \cvItemizeBegin
-                    \erasmusOne
-                \cvItemizeEnd
-            \bsc
-                \cvItemizeBegin
-                    \bscOne
-                \cvItemizeEnd
-        \end{itemize}
+% EDUCATION
+\section{Education}
+    \begin{itemize}
+        % \summerSchool
+        %     \cvItemizeBegin
+        %         \summerSchoolOne
+        %         \summerSchoolTwo
+        %     \cvItemizeEnd
+        \phd
+            \cvItemizeBegin
+                \phdA
+                \phdB
+            \cvItemizeEnd
+        \msc
+            \cvItemizeBegin
+                \mscA
+                \mscB
+                \mscC
+            \cvItemizeEnd
+        \erasmus
+            \cvItemizeBegin
+                \erasmusA
+            \cvItemizeEnd
+        \bsc
+            \cvItemizeBegin
+                \bscA
+            \cvItemizeEnd
+    \end{itemize}
 
-    % EXPERIENCE
-    \section{Professional Experience}
-        \begin{itemize}
-            \expFlowers
-                \cvItemizeBegin
-                    \expFlowersOne
-                    \expFlowersTwo
-                \cvItemizeEnd
-            \expTum
-                \cvItemizeBegin
-                    \expTumOne
-                    \expTumTwo
-                \cvItemizeEnd
-            \expInfineon
-                \cvItemizeBegin
-                    \expInfineonOne
-                    \expInfineonTwo
-                \cvItemizeEnd
-            \expBmw
-                \cvItemizeBegin
-                    \expBmwOne
-                    \expBmwTwo
-                \cvItemizeEnd
-            \expEgnition
-                \expEgnitionDriverless
-                \expEgnitionBusinessPlan    
-                \expEgnitionTeamLeader
-                \expEgnitionAerodynamics
-            \expSlive
-                \cvItemizeBegin
-                    \expSliveOne
-                    \expSliveTwo
-                \cvItemizeEnd
-            \expTuhh
-                \cvItemizeBegin
-                    \expTuhhOne
-                    \expSliveTwo
-                \cvItemizeEnd
-        \end{itemize}
+% PROFESSIONAL EXPERIENCE
+\section{Professional Experience}
+    \begin{itemize}
+        \professor
+            \cvItemizeBegin
+                \professorA
+                \professorB
+            \cvItemizeEnd
+        \postdoc
+            \cvItemizeBegin
+                \postdocA
+                \postdocB
+                \postdocNengo
+            \cvItemizeEnd
+        \expFlowers
+            \cvItemizeBegin
+                \expFlowersA
+                \expFlowersB
+            \cvItemizeEnd
+        \expTum
+            \cvItemizeBegin
+                \expTumA
+                \expTumB
+            \cvItemizeEnd
+        \expInfineon
+            \cvItemizeBegin
+                \expInfineonA
+                \expInfineonB
+            \cvItemizeEnd
+        \newpage
+        % \expBmw
+        %     \cvItemizeBegin
+        %         \expBmwA
+        %         \expBmwB
+        %     \cvItemizeEnd
+        \expSlive
+            \cvItemizeBegin
+                \expSliveA
+                \expSliveB
+            \cvItemizeEnd
+        \expEgnition
+            \expEgnitionDriverless
+            \expEgnitionBusinessPlan    
+            \expEgnitionTeamLeader
+            \expEgnitionAerodynamics
+        % \expTuhh
+        %     \cvItemizeBegin
+        %         \expTuhhA
+        %         \expSliveB
+        %     \cvItemizeEnd
+    \end{itemize}
 
-    % TEACHING EXPERIENCE
-    \section{Teaching Experience}
-        \begin{itemize}
-            \lecturer
-                \cvItemizeBegin
-                    \lecturerOne
-                    \lecturerTwo
-                \cvItemizeEnd
-            \supervision
-                \cvItemizeBegin
-                    \supervisionOne
-                    \supervisionTwo
-                    \supervisionThree
-                    \supervisionFour
-                    \supervisionFive
-                    \supervisionSix
-                    \supervisionSeven
-                \cvItemizeEnd
-        \end{itemize}
+% TEACHING EXPERIENCE
+\section{Teaching Experience}
+    \begin{itemize}
+        \lecturer
+            \cvItemizeBegin
+                \lecturerA
+                \lecturerB
+            \cvItemizeEnd
+        \supervision
+            \cvItemizeBegin
+                \supervisionA
+                \supervisionB
+                \supervisionC
+                \supervisionD
+                \supervisionE
+                \supervisionF
+                \supervisionG
+            \cvItemizeEnd
+    \end{itemize}
 
-    % PUBLICATIONS
-    \section{Publications}
-        \publicationItemizeBegin
-            \publicationInCIT
-            \publicationAAAI
-            \publicationPopulationCoded
-            \publicationSpikingTransformer
-            \publicationRateCoded
-            \publicationEncodingSurvey
-            \publicationBernstainTwo
-            \publicationDAICAFGR
-            \publicationDAICANN
-            \publicationBernsteinOne
-            \publicationBernsteinDA
-            \publicationReport
-        \publicationItemizeEnd
- 
-    % PRESENTATIONS
-    \section{Presentations}
-        \presentations
+% PUBLICATIONS
+\section{Publications}
+    \publicationItemizeBegin
+        \publicationInCIT
+        \publicationPhdThesis
+        \publicationAAAI
+        \publicationPopulationCoded
+        \publicationSpikingTransformer
+        \publicationRateCoded
+        \publicationEncodingSurvey
+        \publicationBernstainTwo
+        \publicationDAICAFGR
+        \publicationDAICANN
+        \publicationBernsteinOne
+        \publicationBernsteinDA
+        \publicationReport
+    \publicationItemizeEnd
 
-    % PROJECTS
-    \section{Open Source Projects}
-        \begin{itemize}
-            \fossHPZ
-                \cvItemizeBegin
-                    \fossHPZOne
-                    \fossHPZTwo
-                    \fossHPZThree
-                \cvItemizeEnd
-            \fossConvSnn
-                \cvItemizeBegin
-                    \fossConvSnnOne
-                    \fossConvSnnTwo
-                \cvItemizeEnd
-            % \fossRazerDataScience
-            %     \cvItemizeBegin
-            %         \fossRazerDataScienceOne
-            %     \cvItemizeEnd
-        \end{itemize}
+% PRESENTATIONS
+\section{Presentations}
+    \presentations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % SKILLS
-    \section{Skills}
-        \begin{itemize}
-            \skillsProgramming
-            \skillsLanguages
-            \skillsInterests
-            % \skillsWorkingWithChildrenCheck
-        \end{itemize}
+% PROJECTS
+\section{Open Source Projects}
+    \begin{itemize}
+        \fossConnectogenesis
+            \cvItemizeBegin
+                \fossConnectogenesisA
+                \fossConnectogenesisB
+            \cvItemizeEnd
+        \fossConvSnn
+            \cvItemizeBegin
+                \fossConvSnnA
+                \fossConvSnnB
+            \cvItemizeEnd
+        % \fossRazerDataScience
+        %     \cvItemizeBegin
+        %         \fossRazerDataScienceOne
+        %     \cvItemizeEnd
+    \end{itemize}
+
+% SKILLS
+\section{Skills}
+    \begin{itemize}
+        \skillsProgramming
+        \skillsLanguages
+        \skillsInterests
+        % \skillsWorkingWithChildrenCheck
+    \end{itemize}
 
 \end{document}
