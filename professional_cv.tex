@@ -1,4 +1,9 @@
 \documentclass[a4paper,11pt]{article}
+
+\newcommand{\entry}[3]{
+    \item \textbf{#1}\hfill #3\vspace{-9pt}
+    \item \textit{\small #2}\vspace{-7pt}}
+
 \input{content.tex}
 
 \begin{document}
@@ -8,33 +13,42 @@
         \myWebsite | \myMailAddress | \myGithub | \myPhoneNumber 
     \end{center}
 
+    % PROFILE
+    \section{Profile}
+    \profile
+
     % EXPERIENCE
     \section{Professional Experience}
         \begin{itemize}
-            \postdocShort
+            \professor
                 \cvItemizeBegin
-                    \postdocOne
-                    \postdocTwo
+                    \professorA
+                    \professorB
+                \cvItemizeEnd
+            \postdoc
+                \cvItemizeBegin
+                    \postdocA
+                    \postdocB
                 \cvItemizeEnd
             \expFlowers
                 \cvItemizeBegin
-                    \expFlowersOne
-                    \expFlowersTwo
+                    \expFlowersA
+                    \expFlowersB
                 \cvItemizeEnd
             % \expTum
             %     \cvItemizeBegin
-            %         \expTumOne
-            %         \expTumTwo
+            %         \expTumA
+            %         \expTumB
             %     \cvItemizeEnd
             \expInfineon
                 \cvItemizeBegin
-                    \expInfineonOne
-                    \expInfineonTwo
+                    \expInfineonA
+                    \expInfineonB
                 \cvItemizeEnd
             \expBmw
                 \cvItemizeBegin
-                    \expBmwOne
-                    \expBmwTwo
+                    \expBmwA
+                    \expBmwB
                 \cvItemizeEnd
             \expEgnition
                 \expEgnitionDriverless
@@ -43,8 +57,8 @@
                 \expEgnitionAerodynamics
             \expSlive
             \cvItemizeBegin
-                \expSliveOne
-                \expSliveTwo
+                \expSliveA
+                \expSliveB
             \cvItemizeEnd
         \end{itemize}
 
@@ -71,18 +85,18 @@
         \begin{itemize}
             \fossHPZ
                 \cvItemizeBegin
-                    \fossHPZOne
-                    \fossHPZTwo
-                    \fossHPZThree
+                    \fossHPZA
+                    \fossHPZB
+                    \fossHPZC
                 \cvItemizeEnd
             \fossConvSnn
                 \cvItemizeBegin
-                    \fossConvSnnOne
-                    \fossConvSnnTwo
+                    \fossConvSnnA
+                    \fossConvSnnB
                 \cvItemizeEnd
             \fossRazerDataScience
                 \cvItemizeBegin
-                    \fossRazerDataScienceOne
+                    \fossRazerDataScienceA
                 \cvItemizeEnd
         \end{itemize}
 
