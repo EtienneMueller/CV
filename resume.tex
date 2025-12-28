@@ -1,4 +1,8 @@
 \documentclass[a4paper,11pt]{article}
+
+\newcommand{\entry}[3]{
+    \item \textbf{#1} (\textit{#2})\hfill \textbf{#3}\vspace{-7pt}}
+
 \input{content.tex}
 
 \begin{document}
@@ -8,39 +12,45 @@
         \myWebsite | \myMailAddress | \myGithub | \myPhoneNumber
     \end{center}
 
+    % PROFILE
+    \profile
+
     % EXPERIENCE
     \section{Professional Experience}
         \begin{itemize}
-            \postdocDense
+            \professor
                 \cvItemizeBegin
-                    \postdocOne
-                    \postdocTwo
+                    \professorA
+                    \professorB
                 \cvItemizeEnd
-            \expFlowersDense
+            \postdoc
                 \cvItemizeBegin
-                    \expFlowersOne
-                    \expFlowersTwo
+                    \postdocA
+                    \postdocB
                 \cvItemizeEnd
-            \expInfineonDense
+            \expFlowers
                 \cvItemizeBegin
-                    \expInfineonOne
-                    \expInfineonTwo
+                    % \expFlowersA
+                    \expFlowersB
                 \cvItemizeEnd
-            \expSliveDense
+            \expInfineon
                 \cvItemizeBegin
-                    \expSliveOne
-                    \expSliveTwo
+                    % \expInfineonA
+                    \expInfineonB
+                \cvItemizeEnd
+            \expSlive
+                \cvItemizeBegin
+                    \expSliveA
+                    \expSliveB
                 \cvItemizeEnd
         \end{itemize}
 
     % EDUCATION
     \section{Education}
         \begin{itemize}
-            \summerSchoolDense
-            \phdDense
-            \mscDense
-            % \erasmusDense
-            \bscDense
+            \phd
+            \msc
+            \bsc
         \end{itemize}
 
     % SKILLS
@@ -55,14 +65,13 @@
         \begin{itemize}
             \fossHPZ
                 \cvItemizeBegin
-                    \fossHPZOne
-                    \fossHPZTwo
-                    \fossHPZThree
+                    % \fossHPZA
+                    \fossHPZB
                 \cvItemizeEnd
             \fossConvSnn
                 \cvItemizeBegin
-                    \fossConvSnnOne
-                    \fossConvSnnTwo
+                    \fossConvSnnA
+                    % \fossConvSnnB
                 \cvItemizeEnd
         \end{itemize}
 
@@ -70,7 +79,7 @@
     \section{Selected Publications}
         \publicationItemizeBegin
             \publicationInCIT
-            \publicationAAAI
+            % \publicationAAAI
             \publicationSpikingTransformer
             \seeGoogleScholar
         \publicationItemizeEnd
