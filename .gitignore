@@ -1,4 +1,6 @@
-personal_*.tex
+personal*.tex
+.DS_Store
+Icon?
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
