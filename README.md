@@ -64,9 +64,9 @@ These .png files have been created using ImageMagick. The current version gives 
 
 Then, to create the image files:
 ```bash
-convert -density 300 -alpha remove -bordercolor gray90 -border 5 -strip resume.pdf imgs/resume.png
-convert -density 300 -alpha remove -bordercolor gray90 -border 5 -strip professional_cv.pdf imgs/professional_cv.png
-convert -density 300 -alpha remove -bordercolor gray90 -border 5 -strip academic_cv.pdf imgs/academic_cv.png
+magick -density 300 resume.pdf -alpha remove -bordercolor gray90 -border 5 -strip imgs/resume.png
+magick -density 300 professional_cv.pdf -alpha remove -bordercolor gray90 -border 5 -strip imgs/professional_cv.png
+magick -density 300 academic_cv.pdf -alpha remove -bordercolor gray90 -border 5 -strip imgs/academic_cv.png
 ```
 
 
